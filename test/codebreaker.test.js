@@ -61,4 +61,31 @@ describe('Codebreaker Test', function(){
         let result = guess('1269')
         test.equal(result, '000-', 'Retorna un 000-')
     })
+})
+
+describe('Test solo numeros', function(){
+    it('Debe retornar ERROR con d293', function(){
+        let result = guess('d293')
+        test.equal(result, 'ERROR', 'Retorna ERROR')
+    })
+    it('Debe retornar ERROR con 4d93', function(){
+        let result = guess('4d93')
+        test.equal(result, 'ERROR', 'Retorna ERROR')
+    })
+    it('Debe retornar ERROR con 52g3', function(){
+        let result = guess('52g3')
+        test.equal(result, 'ERROR', 'Retorna ERROR')
+    })
+    it('Debe retornar ERROR con 527g', function(){
+        let result = guess('527g')
+        test.equal(result, 'ERROR', 'Retorna ERROR')
+    })
+    it('Debe retornar MAS DE 4 NUMEROS🚫  con 32425', function(){
+        let result = guess('32425')
+        test.equal(result, 'MAS DE 4 NUMEROS🚫', 'Retorna MAS DE 4 NUMEROS🚫')
+    })
+    it('Debe retornar MENOS DE 4 NUMEROS🚫  con 32', function(){
+        let result = guess('32')
+        test.equal(result, 'MENOS DE 4 NUMEROS🚫', 'Retorna MENOS DE 4 NUMEROS🚫')
+    })
 });
